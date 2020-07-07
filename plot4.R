@@ -3,7 +3,6 @@ library(dplyr)
 library(lubridate)
 #Read data
 power_data <- read.table("household_power_consumption.txt", sep = ";", header = T)
-View(power_data)
 pow <- power_data %>% filter(Date == "1/2/2007" | Date == "2/2/2007")
 # Pasting date and time and converting into date variables
 pow <- mutate(pow, date_time = paste(pow$Date, pow$Time))
